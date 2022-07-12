@@ -87,8 +87,8 @@ async def handle_streamer_message(streamer_message: near_primitives.StreamerMess
 async def main():
     config = LakeConfig.mainnet()
     config.start_block_height = 69030747
-    config.aws_access_key_id = os.getenv("aws_access_key_id")
-    config.aws_secret_key = os.getenv("aws_secret_access_key")
+    config.aws_access_key_id = os.getenv("AWS_ACCESS_KEY_ID")
+    config.aws_secret_key = os.getenv("AWS_SECRET_ACCESS_KEY")
 
     stream_handle, streamer_messages_queue = streamer(config)
     while True:
